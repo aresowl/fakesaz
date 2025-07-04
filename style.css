@@ -1,0 +1,250 @@
+/* CSS styles for a modern, minimal, iOS-like UI with glassmorphism */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    direction: rtl; /* Right-to-left for Persian */
+    text-align: right;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Soft gradient background */
+    display: flex;
+    flex-direction: column; /* Allow content and footer to stack */
+    justify-content: flex-start; /* Align content to top */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    position: relative; /* For sticky footer positioning */
+    padding-bottom: 80px; /* Space for the sticky footer */
+}
+
+#app {
+    width: 100%;
+    max-width: 760px; /* Increased max-width for PC view to allow more space for two columns */
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Space between app content and footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #2c3e50; /* Darker heading color */
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    background: rgba(255, 255, 255, 0.4); /* Glassmorphism effect for header */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 760px; /* Match app width */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Space below header */
+}
+
+.generate-btn {
+    background-color: #007aff; /* iOS blue */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover/active */
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3); /* Soft shadow for button */
+}
+
+.generate-btn:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.generate-btn:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 5px rgba(0, 122, 255, 0.3);
+}
+
+#outputCard {
+    display: flex; /* Use flexbox to arrange data sections */
+    flex-wrap: wrap; /* Allow sections to wrap to next line */
+    justify-content: center; /* Center sections when they wrap */
+    gap: 20px; /* Space between individual section cards */
+    width: 100%; /* Take full width of parent */
+    /* Initial state for animation - applied to sections now */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.data-section {
+    background: rgba(255, 255, 255, 0.6); /* Glassmorphism for each section */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    flex: 1 1 calc(50% - 20px); /* Two columns on larger screens, with gap */
+    min-width: 300px; /* Adjusted min-width for better desktop layout */
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.section-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #007aff; /* iOS blue for section titles */
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(0, 122, 255, 0.3); /* Dashed line under section title */
+}
+
+.data-item {
+    display: flex; /* Use flexbox for label and value alignment */
+    justify-content: space-between; /* Space out label and value */
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Subtle separator */
+    font-size: 0.95em;
+    color: #444;
+}
+
+.data-item:last-child {
+    border-bottom: none; /* No border for the last item in a section */
+}
+
+.data-label {
+    font-weight: 600; /* Bold label */
+    color: #555;
+    flex-shrink: 0; /* Prevent label from shrinking */
+    padding-left: 10px; /* Space between label and value */
+}
+
+.data-value {
+    flex-grow: 1; /* Allow value to take available space */
+    text-align: left; /* Align value to the left (for numbers/codes) */
+    direction: ltr; /* Ensure numbers and Latin text are LTR */
+    font-family: 'SF Mono', 'Courier New', monospace; /* Monospace for numbers/codes for better readability */
+    color: #222;
+    word-break: break-all; /* Break long words if necessary */
+    font-size: 1.05em; /* Slightly increased font size for data values */
+}
+
+.footer-sticky {
+    position: fixed; /* Make it sticky */
+    bottom: 0; /* Stick to the bottom */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Glassmorphism effect */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 0.85em;
+    color: #555;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.footer-sticky a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer-sticky a:hover {
+    color: #005bb5;
+    text-decoration: underline;
+}
+
+.by-ares {
+    position: fixed; /* Fixed position for "by Ares" */
+    bottom: 10px; /* Adjust as needed */
+    left: 20px;
+    font-size: 0.75em;
+    color: rgba(0, 0, 0, 0.4);
+    direction: ltr; /* Ensure "by Ares" is LTR */
+    pointer-events: none; /* Make it non-interactive */
+    z-index: 1001; /* Above footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { /* Adjust breakpoint for tablet/mobile */
+    #app {
+        max-width: 500px; /* Revert to smaller max-width for smaller screens */
+    }
+    h1 {
+        max-width: 500px; /* Revert to smaller max-width for smaller screens */
+    }
+    .data-section {
+        flex: 1 1 100%; /* Stack sections vertically on smaller screens */
+        min-width: unset; /* Remove min-width constraint */
+    }
+}
+
+@media (max-width: 600px) { /* Mobile specific adjustments */
+    body {
+        padding: 10px;
+        padding-bottom: 80px; /* Adjust padding for smaller footer */
+    }
+    #app {
+        padding: 0; /* Remove padding from app as sections have it */
+        margin: 0;
+    }
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        border-radius: 15px;
+    }
+    .generate-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    #outputCard {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        gap: 15px; /* Adjust gap for stacked sections */
+    }
+    .data-section {
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .data-item {
+        flex-direction: column; /* Stack label and value on small screens */
+        align-items: flex-end; /* Align to the right for RTL */
+        padding: 8px 0;
+    }
+    .data-label {
+        padding-left: 0;
+        margin-bottom: 3px; /* Space between stacked label and value */
+    }
+    .data-value {
+        text-align: right; /* Align value to the right when stacked */
+        direction: rtl; /* Back to RTL for overall flow */
+        font-size: 1em; /* Adjust font size for mobile */
+    }
+    .section-title {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    .footer-sticky {
+        padding: 12px 15px;
+        font-size: 0.75em;
+    }
+    .by-ares {
+        left: 15px;
+        font-size: 0.65em;
+    }
+}
