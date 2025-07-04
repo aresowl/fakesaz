@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هویت ساز ایرانی، تولید اطلاعات فیک: کارت ملی، شماره موبایل، آدرس و بانکی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>هویت ساز ایرانی: تولید اطلاعات فیک (کارت ملی، شماره موبایل، آدرس و بانکی)</h1>
+        <button class="generate-btn" id="generateButton">تولید اطلاعات جدید</button>
+
+        <div id="outputCard">
+            <div class="data-section">
+                <div class="section-title">اطلاعات فردی</div>
+                <div class="data-item">
+                    <span class="data-label">نام و نام خانوادگی:</span>
+                    <span class="data-value" id="fullName"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">جنسیت:</span>
+                    <span class="data-value" id="gender"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">تاریخ تولد:</span>
+                    <span class="data-value" id="birthDate"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">شهر محل تولد:</span>
+                    <span class="data-value" id="birthCity"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">کد ملی:</span>
+                    <span class="data-value" id="nationalCode"></span>
+                </div>
+            </div>
+
+            <div class="data-section">
+                <div class="section-title">اطلاعات تماس</div>
+                <div class="data-item">
+                    <span class="data-label">شماره موبایل:</span>
+                    <span class="data-value" id="phoneNumber"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">آدرس:</span>
+                    <span class="data-value" id="address"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">کد پستی:</span>
+                    <span class="data-value" id="postalCode"></span>
+                </div>
+            </div>
+
+            <div class="data-section">
+                <div class="section-title">اطلاعات بانکی</div>
+                <div class="data-item">
+                    <span class="data-label">شماره کارت:</span>
+                    <span class="data-value" id="cardNumber"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">CVV2:</span>
+                    <span class="data-value" id="cvv2"></span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">تاریخ انقضای کارت:</span>
+                    <span class="data-value" id="cardExpiry"></span>
+                </div>
+            </div>
+
+            <div class="data-section">
+                <div class="section-title">سایر اطلاعات</div>
+                <div class="data-item">
+                    <span class="data-label">شغل:</span>
+                    <span class="data-value" id="job"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-sticky">
+        برای حمایت از این پروژه و کمک به گسترش فرهنگ اوپن سورس در ایران، لطفاً به
+        <a href="https://github.com/aresowl/fakesaz" target="_blank" rel="noopener noreferrer">ریپازیتوری گیت‌هاب ما</a>
+        ستاره بدهید.
+    </div>
+    <div class="by-ares">by Ares</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
