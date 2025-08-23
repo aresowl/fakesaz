@@ -3,24 +3,59 @@ const maleNames = ["علی", "محمد", "حسین", "رضا", "امیر", "مه
 const femaleNames = ["فاطمه", "زهرا", "مریم", "زینب", "نازنین", "سارا", "آزاده", "لیلا", "نیره", "شقایق", "مهسا", "زینب", "هانیه", "کوثر", "یکتا", "آتنا", "بهاره", "پریا", "دینا", "رها", "سحر", "فرناز", "کیمیا", "مهناز", "نگار", "هدیه", "یاسمن", "شیدا", "گلناز", "افسون", "مژگان", "بهناز", "آرزو", "پگاه", "ترانه", "ژاله", "رویا", "سپیده", "شادی", "مهتاب", "نیلوفر", "هستی", "آیدا", "پروانه", "جواهر", "خاطره", "دلناز", "زیبا", "ستاره", "شهرزاد", "غزل", "فرشته", "نرگس", "ویدا", "پریسا"];
 const lastNames = ["کریمی", "محمدی", "حسینی", "رضایی", "مرادی", "بهرامی", "اکبری", "اسدی", "عزیزی", "احمدی", "فراهانی", "قاسمی", "نوروزی", "هاشمی", "سلیمانی", "شریفی", "زمانی", "یوسفی", "موسوی", "رحمتی", "یزدانی", "مقدم", "عابدی", "دانشور", "صادقی", "بخشی", "جعفری", "خسروی", "درویشی", "زارعی", "شجاعی", "طاهری", "عظیمی", "غفاری", "فدایی", "قادری", "کمالی", "لطفی", "ناصری", "وکیلی", "هادیان", "یاراحمدی", "پناهی", "چگینی", "صفری", "گلستانی", "میراحمدی", "نظری", "واحدی", "بیگدلی", "دهقان", "روشن", "زرین‌کوب", "سعیدی", "فریدونی", "محمودی", "نادری", "یادگاری", "پاکدل", "جباری", "حسن‌زاده", "رستمی", "شیروانی", "طیبی", "علیزاده", "فخاری", "قربانی", "کوهی", "مرتضوی", "نیک‌خواه", "هوشمند", "یعقوبی"];
 
+// Updated cities array with accurate National Code and Postcode information
 const cities = [
-    { name: "تهران", code: "001", province: "تهران" }, { name: "مشهد", code: "002", province: "خراسان رضوی" }, { name: "اصفهان", code: "003", province: "اصفهان" },
-    { name: "تبریز", code: "004", province: "آذربایجان شرقی" }, { name: "شیراز", code: "116", province: "فارس" }, { name: "اهواز", code: "174", province: "خوزستان" },
-    { name: "قم", code: "006", province: "قم" }, { name: "کرج", code: "005", province: "البرز" }, { name: "رشت", code: "188", province: "گیلان" },
-    { name: "کرمان", code: "299", province: "کرمان" }, { name: "یزد", code: "362", province: "یزد" }, { name: "ارومیه", code: "276", province: "آذربایجان غربی" },
-    { name: "کرمانشاه", code: "323", province: "کرمانشاه" }, { name: "همدان", code: "386", province: "همدان" }, { name: "زاهدان", code: "361", province: "سیستان و بلوچستان" },
-    { name: "اردبیل", code: "146", province: "اردبیل" }, { name: "بندرعباس", code: "339", province: "هرمزگان" }, { name: "ساری", code: "209", province: "مازندران" },
-    { name: "گرگان", code: "215", province: "گلستان" }, { name: "سنندج", code: "374", province: "کردستان" }, { name: "خرم‌آباد", code: "396", province: "لرستان" },
-    { name: "اراک", code: "052", province: "مرکزی" }, { name: "قزوین", code: "444", province: "قزوین" }, { name: "بیرجند", code: "084", province: "خراسان جنوبی" },
-    { name: "بجنورد", code: "085", province: "خراسان شمالی" }, { name: "ایلام", code: "591", province: "ایلام" }, { name: "بوشهر", code: "351", province: "بوشهر" },
-    { name: "شهرکرد", code: "491", province: "چهارمحال و بختیاری" }, { name: "یاسوج", code: "531", province: "کهگیلویه و بویراحمد" }, { name: "سمنان", code: "451", province: "سمنان" },
-    { name: "زنجان", code: "421", province: "زنجان" }, { name: "سیرجان", code: "298", province: "کرمان" }, { name: "کاشان", code: "007", province: "اصفهان" },
-    { name: "دزفول", code: "175", province: "خوزستان" }, { name: "نیشابور", code: "008", province: "خراسان رضوی" }, { name: "سبزوار", code: "009", province: "خراسان رضوی" },
-    { name: "آمل", code: "210", province: "مازندران" }, { name: "بابل", code: "211", province: "مازندران" }, { name: "قائم‌شهر", code: "212", province: "مازندران" },
-    { name: "کاشمر", code: "010", province: "خراسان رضوی" }, { name: "جهرم", code: "117", province: "فارس" }, { name: "بندر انزلی", code: "189", province: "گیلان" },
-    { name: "بروجرد", code: "397", province: "لرستان" }, { name: "تربت حیدریه", code: "011", province: "خراسان رضوی" }, { name: "قوچان", code: "012", province: "خراسان رضوی" },
-    { name: "ساوه", code: "053", province: "مرکزی" }, { name: "خوی", code: "277", province: "آذربایجان غربی" }, { name: "نقده", code: "278", province: "آذربایجان غربی" },
-    { name: "میاندوآب", code: "279", province: "آذربایجان غربی" }, { name: "بانه", code: "375", province: "کردستان" }, { name: "سقز", code: "376", province: "کردستان" }
+    { name: "تهران", province: "تهران", nationalCodePrefixes: ["001", "002", "003", "004", "005", "006", "007", "008", "011", "020", "025"], postcodeRange: [11111, 19999] },
+    { name: "مشهد", province: "خراسان رضوی", nationalCodePrefixes: ["092", "093", "094"], postcodeRange: [91331, 93781] },
+    { name: "اصفهان", province: "اصفهان", nationalCodePrefixes: ["127", "128", "129"], postcodeRange: [81331, 83791] },
+    { name: "تبریز", province: "آذربایجان شرقی", nationalCodePrefixes: ["136", "137", "138"], postcodeRange: [51331, 51999] },
+    { name: "شیراز", province: "فارس", nationalCodePrefixes: ["228", "229", "230"], postcodeRange: [71331, 73491] },
+    { name: "اهواز", province: "خوزستان", nationalCodePrefixes: ["174", "175"], postcodeRange: [61331, 61791] },
+    { name: "قم", province: "قم", nationalCodePrefixes: ["037", "038"], postcodeRange: [37131, 37491] },
+    { name: "کرج", province: "البرز", nationalCodePrefixes: ["031", "032"], postcodeRange: [31331, 31999] }, // Adjusted postcode for Karaj
+    { name: "رشت", province: "گیلان", nationalCodePrefixes: ["258", "259"], postcodeRange: [41331, 41999] },
+    { name: "کرمان", province: "کرمان", nationalCodePrefixes: ["298", "299"], postcodeRange: [76131, 77951] },
+    { name: "یزد", province: "یزد", nationalCodePrefixes: ["442", "443"], postcodeRange: [89131, 89493] },
+    { name: "ارومیه", province: "آذربایجان غربی", nationalCodePrefixes: ["274", "275"], postcodeRange: [57131, 57591] },
+    { name: "کرمانشاه", province: "کرمانشاه", nationalCodePrefixes: ["324", "325"], postcodeRange: [67131, 67851] },
+    { name: "همدان", province: "همدان", nationalCodePrefixes: ["386", "387"], postcodeRange: [65131, 65651] },
+    { name: "زاهدان", province: "سیستان و بلوچستان", nationalCodePrefixes: ["361", "362"], postcodeRange: [98131, 98491] },
+    { name: "اردبیل", province: "اردبیل", nationalCodePrefixes: ["145", "146"], postcodeRange: [56131, 56491] },
+    { name: "بندرعباس", province: "هرمزگان", nationalCodePrefixes: ["338", "339"], postcodeRange: [79131, 79661] },
+    { name: "ساری", province: "مازندران", nationalCodePrefixes: ["208", "209"], postcodeRange: [48131, 48491] },
+    { name: "گرگان", province: "گلستان", nationalCodePrefixes: ["211", "212"], postcodeRange: [49131, 49371] },
+    { name: "سنندج", province: "کردستان", nationalCodePrefixes: ["372", "373"], postcodeRange: [66131, 66199] },
+    { name: "خرم‌آباد", province: "لرستان", nationalCodePrefixes: ["406", "407"], postcodeRange: [68131, 68891] },
+    { name: "اراک", province: "مرکزی", nationalCodePrefixes: ["052", "053"], postcodeRange: [38131, 38571] },
+    { name: "قزوین", province: "قزوین", nationalCodePrefixes: ["431", "432"], postcodeRange: [34131, 34981] },
+    { name: "بیرجند", province: "خراسان جنوبی", nationalCodePrefixes: ["064", "065"], postcodeRange: [97131, 97481] },
+    { name: "بجنورد", province: "خراسان شمالی", nationalCodePrefixes: ["067", "068"], postcodeRange: [94131, 94591] },
+    { name: "ایلام", province: "ایلام", nationalCodePrefixes: ["449", "450"], postcodeRange: [69311, 69391] },
+    { name: "بوشهر", province: "بوشهر", nationalCodePrefixes: ["349", "350"], postcodeRange: [75131, 75461] },
+    { name: "شهرکرد", province: "چهارمحال و بختیاری", nationalCodePrefixes: ["461", "462"], postcodeRange: [88131, 88591] },
+    { name: "یاسوج", province: "کهگیلویه و بویراحمد", nationalCodePrefixes: ["422", "423"], postcodeRange: [75911, 75981] },
+    { name: "سمنان", province: "سمنان", nationalCodePrefixes: ["351", "357"], postcodeRange: [35131, 35791] },
+    { name: "زنجان", province: "زنجان", nationalCodePrefixes: ["451", "452", "453", "454", "455"], postcodeRange: [45131, 45541] },
+    { name: "سیرجان", province: "کرمان", nationalCodePrefixes: ["306", "307"], postcodeRange: [78131, 78391] },
+    { name: "کاشان", province: "اصفهان", nationalCodePrefixes: ["125", "126"], postcodeRange: [87131, 87591] },
+    { name: "دزفول", province: "خوزستان", nationalCodePrefixes: ["199", "200"], postcodeRange: [64611, 64691] },
+    { name: "نیشابور", province: "خراسان رضوی", nationalCodePrefixes: ["105", "106"], postcodeRange: [93131, 93491] },
+    { name: "سبزوار", province: "خراسان رضوی", nationalCodePrefixes: ["078", "079"], postcodeRange: [96131, 96591] },
+    { name: "آمل", province: "مازندران", nationalCodePrefixes: ["461", "462", "463"], postcodeRange: [46131, 46391] },
+    { name: "بابل", province: "مازندران", nationalCodePrefixes: ["471", "472", "473", "474", "475"], postcodeRange: [47131, 47591] },
+    { name: "قائم‌شهر", province: "مازندران", nationalCodePrefixes: ["476", "477"], postcodeRange: [47611, 47791] },
+    { name: "کاشمر", province: "خراسان رضوی", nationalCodePrefixes: ["089", "090"], postcodeRange: [96711, 96791] },
+    { name: "جهرم", province: "فارس", nationalCodePrefixes: ["246", "247"], postcodeRange: [74131, 74591] },
+    { name: "بندر انزلی", province: "گیلان", nationalCodePrefixes: ["264"], postcodeRange: [43131, 43191] },
+    { name: "بروجرد", province: "لرستان", nationalCodePrefixes: ["412", "413"], postcodeRange: [68971, 69199] },
+    { name: "تربت حیدریه", province: "خراسان رضوی", nationalCodePrefixes: ["069", "070"], postcodeRange: [95131, 95591] },
+    { name: "قوچان", province: "خراسان رضوی", nationalCodePrefixes: ["086", "087"], postcodeRange: [94711, 94861] },
+    { name: "ساوه", province: "مرکزی", nationalCodePrefixes: ["059", "060"], postcodeRange: [39131, 39491] },
+    { name: "خوی", province: "آذربایجان غربی", nationalCodePrefixes: ["279", "280"], postcodeRange: [58131, 58591] },
+    { name: "نقده", province: "آذربایجان غربی", nationalCodePrefixes: ["290"], postcodeRange: [57611, 57691] },
+    { name: "میاندوآب", province: "آذربایجان غربی", nationalCodePrefixes: ["296", "297"], postcodeRange: [59351, 59361] },
+    { name: "بانه", province: "کردستان", nationalCodePrefixes: ["384"], postcodeRange: [66911, 66991] },
+    { name: "سقز", province: "کردستان", nationalCodePrefixes: ["375", "376"], postcodeRange: [66811, 66891] }
 ];
 
 const mobilePrefixes = ["0910", "0911", "0912", "0913", "0914", "0915", "0916", "0917", "0918", "0919", "0930", "0933", "0935", "0936", "0937", "0938", "0939", "0990", "0991", "0992", "0993", "0994", "0901", "0902", "0903", "0904", "0905", "0920", "0921", "0922", "0931", "0932", "0934", "0998", "0999"];
@@ -42,10 +77,10 @@ function getRandomNumber(min, max) {
 }
 
 // 3. National Code Generation (with checksum validation)
-function generateNationalCode(cityCode) {
-    let nationalCodeBase = cityCode; // First 3 digits (city code)
+function generateNationalCode(cityCodePrefix) {
+    let nationalCodeBase = cityCodePrefix;
     for (let i = 0; i < 6; i++) {
-        nationalCodeBase += getRandomNumber(0, 9).toString(); // Next 6 random digits
+        nationalCodeBase += getRandomNumber(0, 9).toString();
     }
 
     let sum = 0;
@@ -67,28 +102,27 @@ function generateNationalCode(cityCode) {
 // 4. Luhn Algorithm for Card Number Generation
 function generateLuhnCardNumber() {
     let tempDigits = [];
-    tempDigits.push(getRandomItem([4, 5, 6])); // First digit (e.g., 4 for Visa, 5 for MasterCard, 6 for Discover)
-    for (let i = 0; i < 14; i++) { // Next 14 digits to make it 15 digits total
+    tempDigits.push(getRandomItem([4, 5, 6]));
+    for (let i = 0; i < 14; i++) {
         tempDigits.push(getRandomNumber(0, 9));
     }
 
-    // Calculate the checksum for these 15 digits
     let luhnSum = 0;
-    let shouldDouble = true; // Flag to double every second digit from the right
+    let shouldDouble = false;
 
     for (let i = tempDigits.length - 1; i >= 0; i--) {
         let digit = tempDigits[i];
         if (shouldDouble) {
             digit *= 2;
             if (digit > 9) {
-                digit -= 9; // If doubled digit is > 9, subtract 9 (e.g., 14 -> 5)
+                digit -= 9;
             }
         }
         luhnSum += digit;
-        shouldDouble = !shouldDouble; // Toggle for the next digit
+        shouldDouble = !shouldDouble;
     }
 
-    let lastDigit = (10 - (luhnSum % 10)) % 10; // The checksum digit
+    let lastDigit = (10 - (luhnSum % 10)) % 10;
     
     return tempDigits.join('') + lastDigit.toString();
 }
@@ -99,80 +133,74 @@ function generateRandomPersianDate(startYear, endYear) {
     let month = getRandomNumber(1, 12);
     let day;
 
-    if (month <= 6) { // Farvardin to Shahrivar (31 days)
+    if (month <= 6) {
         day = getRandomNumber(1, 31);
-    } else if (month <= 11) { // Mehr to Bahman (30 days)
+    } else if (month <= 11) {
         day = getRandomNumber(1, 30);
-    } else { // Esfand (29 or 30 days, simplified to 29 for random)
-        day = getRandomNumber(1, 29); // To simplify, not considering leap years for 30th Esfand
+    } else {
+        day = getRandomNumber(1, 29);
     }
-    // Format day and month with leading zeros if less than 10
     return `${String(day).padStart(2, '0')} / ${String(month).padStart(2, '0')} / ${year}`;
 }
 
 function generateCardExpiryDate() {
-    // As of July 2025 (current Gregorian year), current Persian year is approximately 1404.
-    // We'll use 1404 as the base for generating future expiry years.
-    const currentPersianYear = 1404; 
-    // Card should expire between 2 to 7 years from now (e.g., 1406 to 1411)
-    const expiryYear = getRandomNumber(currentPersianYear + 2, currentPersianYear + 7); 
-    const expiryMonth = getRandomNumber(1, 12); // Any month is valid
-    // Format month with leading zero if less than 10
+    const currentPersianYear = 1404;
+    const expiryYear = getRandomNumber(currentPersianYear + 2, currentPersianYear + 7);
+    const expiryMonth = getRandomNumber(1, 12);
     return `${String(expiryMonth).padStart(2, '0')} / ${expiryYear}`;
+}
+
+// New function to generate a valid 10-digit postal code based on a 5-digit range
+function generatePostalCode(range) {
+    const [min, max] = range;
+    const basePostalCode = getRandomNumber(min, max);
+    let fullPostalCode = basePostalCode.toString();
+    for (let i = 0; i < 5; i++) {
+        fullPostalCode += getRandomNumber(0, 9).toString();
+    }
+    return fullPostalCode;
 }
 
 // 6. Main Generation Function: Orchestrates all data generation and UI updates
 function generateFakeData() {
-    // 6.1. Gender and Name
-    const isMale = Math.random() < 0.5; // Randomly select gender
+    const isMale = Math.random() < 0.5;
     const firstName = isMale ? getRandomItem(maleNames) : getRandomItem(femaleNames);
     const lastName = getRandomItem(lastNames);
     const fullName = `${firstName} ${lastName}`;
     const gender = isMale ? "مرد" : "زن";
 
-    // 6.2. Birth City and National Code
-    const selectedCity = getRandomItem(cities); // Select a random city
-    const nationalCode = generateNationalCode(selectedCity.code); // Generate national code based on city code
+    const selectedCity = getRandomItem(cities);
+    const nationalCodePrefix = getRandomItem(selectedCity.nationalCodePrefixes);
+    const nationalCode = generateNationalCode(nationalCodePrefix);
 
-    // 6.3. Phone Number
-    const mobilePrefix = getRandomItem(mobilePrefixes); // Select a random mobile prefix
+    const mobilePrefix = getRandomItem(mobilePrefixes);
     let phoneNumber = mobilePrefix;
     for (let i = 0; i < 7; i++) {
-        phoneNumber += getRandomNumber(0, 9).toString(); // Append 7 random digits
+        phoneNumber += getRandomNumber(0, 9).toString();
     }
 
-    // 6.4. Card Number, CVV2, Expiry Date
-    const cardNumber = generateLuhnCardNumber(); // Generate Luhn-valid card number
-    const cvv2 = getRandomNumber(100, 999).toString(); // Generate 3-digit CVV2
-    const cardExpiry = generateCardExpiryDate(); // Generate card expiry date
+    const cardNumber = generateLuhnCardNumber();
+    const cvv2 = getRandomNumber(100, 999).toString();
+    const cardExpiry = generateCardExpiryDate();
 
-    // 6.5. Address (aligned with selected city's province for consistency)
-    const province = selectedCity.province; // Use the province of the selected city
-    const streetName = getRandomItem(streetNames); // Select random street name
-    const alleyName = getRandomItem(alleyNames); // Select random alley name
-    const plaque = getRandomNumber(1, 200); // Random plaque number
+    const province = selectedCity.province;
+    const streetName = getRandomItem(streetNames);
+    const alleyName = getRandomItem(alleyNames);
+    const plaque = getRandomNumber(1, 200);
     const address = `${province}، ${selectedCity.name}، ${streetName}، ${alleyName}، پلاک ${plaque}`;
 
-    // 6.6. Postal Code (10 digits, random for simplicity as no specific algorithm provided)
-    let postalCode = "";
-    for (let i = 0; i < 10; i++) {
-        postalCode += getRandomNumber(0, 9).toString(); // Generate 10 random digits
-    }
+    const postalCode = generatePostalCode(selectedCity.postcodeRange);
 
-    // 6.7. Job
-    const job = getRandomItem(jobTitles); // Select a random job title
+    const job = getRandomItem(jobTitles);
 
-    // 6.8. Birth Date (Persian)
-    // Years between 1370 to 1400 as per common age range for fake data.
-    const birthDate = generateRandomPersianDate(1370, 1400); 
+    const birthDate = generateRandomPersianDate(1370, 1400);
 
-    // 7. Update UI: Populate the HTML elements with the generated data
     document.getElementById('fullName').textContent = fullName;
     document.getElementById('gender').textContent = gender;
-    document.getElementById('birthCity').textContent = `${selectedCity.name} (کد: ${selectedCity.code})`;
+    document.getElementById('birthCity').textContent = `${selectedCity.name} (${selectedCity.province})`;
     document.getElementById('nationalCode').textContent = nationalCode;
     document.getElementById('phoneNumber').textContent = phoneNumber;
-    document.getElementById('cardNumber').textContent = cardNumber.replace(/(.{4})/g, '$1 ').trim(); // Format card number with spaces
+    document.getElementById('cardNumber').textContent = cardNumber.replace(/(.{4})/g, '$1 ').trim();
     document.getElementById('cvv2').textContent = cvv2;
     document.getElementById('cardExpiry').textContent = cardExpiry;
     document.getElementById('address').textContent = address;
@@ -180,24 +208,20 @@ function generateFakeData() {
     document.getElementById('job').textContent = job;
     document.getElementById('birthDate').textContent = birthDate;
 
-    // 8. Optional: Animate card appearance for a smoother UI experience
     const outputCard = document.getElementById('outputCard');
-    // Reset styles for re-animation if already visible
-    outputCard.style.transition = 'none'; // Disable transition temporarily
+    outputCard.style.transition = 'none';
     outputCard.style.opacity = '0';
     outputCard.style.transform = 'translateY(20px)';
     
-    // Re-enable transition and animate after a small delay
     setTimeout(() => {
         outputCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         outputCard.style.opacity = '1';
         outputCard.style.transform = 'translateY(0)';
-    }, 50); // Small delay to allow style reset to register
+    }, 50);
 }
 
 // 9. Event Listener: Trigger data generation when the button is clicked and on initial load
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('generateButton').addEventListener('click', generateFakeData);
-    // Generate data on initial page load for immediate content display
     generateFakeData();
 });
