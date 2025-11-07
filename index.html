@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>هویت ساز ایرانی، تولید اطلاعات فیک: کارت ملی، شماره موبایل، آدرس و بانکی</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -13,65 +14,65 @@
 
         <div id="outputCard">
             <div class="data-section">
-                <div class="section-title">اطلاعات فردی</div>
+                <div class="section-title" id="section_title_personal">اطلاعات فردی</div>
                 <div class="data-item">
-                    <span class="data-label">نام و نام خانوادگی:</span>
+                    <span class="data-label" id="label_fullName">نام و نام خانوادگی:</span>
                     <span class="data-value" id="fullName"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">جنسیت:</span>
+                    <span class="data-label" id="label_gender">جنسیت:</span>
                     <span class="data-value" id="gender"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">تاریخ تولد:</span>
+                    <span class="data-label" id="label_birthDate">تاریخ تولد:</span>
                     <span class="data-value" id="birthDate"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">شهر محل تولد:</span>
+                    <span class="data-label" id="label_birthCity">شهر محل تولد:</span>
                     <span class="data-value" id="birthCity"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">کد ملی:</span>
+                    <span class="data-label" id="label_nationalCode">کد ملی:</span>
                     <span class="data-value" id="nationalCode"></span>
                 </div>
             </div>
 
             <div class="data-section">
-                <div class="section-title">اطلاعات تماس</div>
+                <div class="section-title" id="section_title_contact">اطلاعات تماس</div>
                 <div class="data-item">
-                    <span class="data-label">شماره موبایل:</span>
+                    <span class="data-label" id="label_phoneNumber">شماره موبایل:</span>
                     <span class="data-value" id="phoneNumber"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">آدرس:</span>
+                    <span class="data-label" id="label_address">آدرس:</span>
                     <span class="data-value" id="address"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">کد پستی:</span>
+                    <span class="data-label" id="label_postalCode">کد پستی:</span>
                     <span class="data-value" id="postalCode"></span>
                 </div>
             </div>
 
             <div class="data-section">
-                <div class="section-title">اطلاعات بانکی</div>
+                <div class="section-title" id="section_title_bank">اطلاعات بانکی</div>
                 <div class="data-item">
-                    <span class="data-label">شماره کارت:</span>
+                    <span class="data-label" id="label_cardNumber">شماره کارت:</span>
                     <span class="data-value" id="cardNumber"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">CVV2:</span>
+                    <span class="data-label" id="label_cvv2">CVV2:</span>
                     <span class="data-value" id="cvv2"></span>
                 </div>
                 <div class="data-item">
-                    <span class="data-label">تاریخ انقضای کارت:</span>
+                    <span class="data-label" id="label_cardExpiry">تاریخ انقضای کارت:</span>
                     <span class="data-value" id="cardExpiry"></span>
                 </div>
             </div>
 
             <div class="data-section">
-                <div class="section-title">سایر اطلاعات</div>
+                <div class="section-title" id="section_title_other">سایر اطلاعات</div>
                 <div class="data-item">
-                    <span class="data-label">شغل:</span>
+                    <span class="data-label" id="label_job">شغل:</span>
                     <span class="data-value" id="job"></span>
                 </div>
             </div>
@@ -79,9 +80,7 @@
     </div>
 
     <div class="footer-sticky">
-        برای حمایت از این پروژه و کمک به گسترش فرهنگ اوپن سورس در ایران، لطفاً به
-        <a href="https://github.com/aresowl/fakesaz" target="_blank" rel="noopener noreferrer">ریپازیتوری گیت‌هاب ما</a>
-        ستاره بدهید.
+        <span id="footerText">لطفاً به <a href="https://github.com/aresowl/fakesaz" target="_blank" rel="noopener noreferrer">ریپازیتوری گیت‌هاب ما</a> ستاره بدهید.</span>
     </div>
     <div class="by-ares">by Ares</div>
 
