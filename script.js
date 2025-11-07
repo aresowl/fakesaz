@@ -1,9 +1,7 @@
-// 1. Data Arrays: All predefined data needed for generation
 const maleNames = ["علی", "محمد", "حسین", "رضا", "امیر", "مهدی", "سید", "جواد", "مصطفی", "حسن", "محمدرضا", "ابوالفضل", "محمود", "پارسا", "کیان", "آرش", "بهنام", "پویا", "داریوش", "رامین", "سروش", "فرهاد", "کوروش", "مانی", "نادر", "هومن", "یوسف", "شهرام", "کامران", "افشین", "مجید", "بهزاد", "سامان", "فرید", "بهرام", "مجتبی", "کاوه", "اردلان", "آرمان", "پرهام", "دانیال", "زانیار", "میلاد", "سپهر", "پژمان", "کیارش", "مازیار", "کیوان", "افشین", "بردیا", "پارسا"];
 const femaleNames = ["فاطمه", "زهرا", "مریم", "زینب", "نازنین", "سارا", "آزاده", "لیلا", "نیره", "شقایق", "مهسا", "زینب", "هانیه", "کوثر", "یکتا", "آتنا", "بهاره", "پریا", "دینا", "رها", "سحر", "فرناز", "کیمیا", "مهناز", "نگار", "هدیه", "یاسمن", "شیدا", "گلناز", "افسون", "مژگان", "بهناز", "آرزو", "پگاه", "ترانه", "ژاله", "رویا", "سپیده", "شادی", "مهتاب", "نیلوفر", "هستی", "آیدا", "پروانه", "جواهر", "خاطره", "دلناز", "زیبا", "ستاره", "شهرزاد", "غزل", "فرشته", "نرگس", "ویدا", "پریسا"];
 const lastNames = ["کریمی", "محمدی", "حسینی", "رضایی", "مرادی", "بهرامی", "اکبری", "اسدی", "عزیزی", "احمدی", "فراهانی", "قاسمی", "نوروزی", "هاشمی", "سلیمانی", "شریفی", "زمانی", "یوسفی", "موسوی", "رحمتی", "یزدانی", "مقدم", "عابدی", "دانشور", "صادقی", "بخشی", "جعفری", "خسروی", "درویشی", "زارعی", "شجاعی", "طاهری", "عظیمی", "غفاری", "فدایی", "قادری", "کمالی", "لطفی", "ناصری", "وکیلی", "هادیان", "یاراحمدی", "پناهی", "چگینی", "صفری", "گلستانی", "میراحمدی", "نظری", "واحدی", "بیگدلی", "دهقان", "روشن", "زرین‌کوب", "سعیدی", "فریدونی", "محمودی", "نادری", "یادگاری", "پاکدل", "جباری", "حسن‌زاده", "رستمی", "شیروانی", "طیبی", "علیزاده", "فخاری", "قربانی", "کوهی", "مرتضوی", "نیک‌خواه", "هوشمند", "یعقوبی"];
 
-// Updated cities array with accurate National Code and Postcode information
 const cities = [
     { name: "تهران", province: "تهران", nationalCodePrefixes: ["001", "002", "003", "004", "005", "006", "007", "008", "011", "020", "025"], postcodeRange: [11111, 19999] },
     { name: "مشهد", province: "خراسان رضوی", nationalCodePrefixes: ["092", "093", "094"], postcodeRange: [91331, 93781] },
@@ -12,7 +10,7 @@ const cities = [
     { name: "شیراز", province: "فارس", nationalCodePrefixes: ["228", "229", "230"], postcodeRange: [71331, 73491] },
     { name: "اهواز", province: "خوزستان", nationalCodePrefixes: ["174", "175"], postcodeRange: [61331, 61791] },
     { name: "قم", province: "قم", nationalCodePrefixes: ["037", "038"], postcodeRange: [37131, 37491] },
-    { name: "کرج", province: "البرز", nationalCodePrefixes: ["031", "032"], postcodeRange: [31331, 31999] }, // Adjusted postcode for Karaj
+    { name: "کرج", province: "البرز", nationalCodePrefixes: ["031", "032"], postcodeRange: [31331, 31999] },
     { name: "رشت", province: "گیلان", nationalCodePrefixes: ["258", "259"], postcodeRange: [41331, 41999] },
     { name: "کرمان", province: "کرمان", nationalCodePrefixes: ["298", "299"], postcodeRange: [76131, 77951] },
     { name: "یزد", province: "یزد", nationalCodePrefixes: ["442", "443"], postcodeRange: [89131, 89493] },
@@ -60,14 +58,60 @@ const cities = [
 
 const mobilePrefixes = ["0910", "0911", "0912", "0913", "0914", "0915", "0916", "0917", "0918", "0919", "0930", "0933", "0935", "0936", "0937", "0938", "0939", "0990", "0991", "0992", "0993", "0994", "0901", "0902", "0903", "0904", "0905", "0920", "0921", "0922", "0931", "0932", "0934", "0998", "0999"];
 
-const jobTitles = ["معلم", "مهندس نرم‌افزار", "پزشک", "پرستار", "کارمند اداری", "فروشنده", "طراح گرافیک", "حسابدار", "آشپز", "برنامه‌نویس وب", "وکیل", "دانشجو", "استاد دانشگاه", "کشاورز", "راننده", "بازاریاب", "مدیر پروژه", "هنرمند", "ورزشکار", "خبرنگار", "خانه‌دار", "کارگر", "صنعتگر", "معمار", "دندانپزشک", "داروساز", "روانشناس", "فیزیوتراپیست", "مکانیک", "برقکار", "نجار", "آرایشگر", "خیاط", "طراح لباس", "عکاس", "فیلمبردار", "موسیقیدان", "خواننده", "بازیگر", "نویسنده", "شاعر", "روزنامه‌نگار", "کارآفرین", "سرمایه‌گذار", "تحلیلگر داده", "متخصص امنیت شبکه", "مدیر شبکه", "طراح محصول", "مدیر منابع انسانی", "مشاور مالی", "کارشناس بیمه", "فناوری اطلاعات", "وب‌مستر", "کپی‌رایتر", "مدیر محتوا", "متخصص سئو", "مدیر بازاریابی", "معامله‌گر", "بانکدار", "حسابرس", "دامپزشک", "ارتوپد", "بینایی سنج", "شنوایی سنج", "کارشناس تغذیه", "مربی ورزشی", "نیروی انتظامی", "آتش‌نشان", "کارمند بانک"];
+const jobTitles = [
+    "معلم", "مهندس نرم‌افزار", "پزشک", "پرستار", "کارمند اداری", "فروشنده", "طراح گرافیک", "حسابدار",
+    "آشپز", "برنامه‌نویس وب", "وکیل", "دانشجو", "استاد دانشگاه", "کشاورز", "راننده", "بازاریاب",
+    "مدیر پروژه", "هنرمند", "ورزشکار", "خبرنگار", "خانه‌دار", "کارگر", "صنعتگر", "معمار",
+    "دندانپزشک", "داروساز", "روانشناس", "فیزیوتراپیست", "مکانیک", "برقکار", "نجار", "آرایشگر",
+    "خیاط", "طراح لباس", "عکاس", "فیلمبردار", "موسیقیدان", "خواننده", "بازیگر", "نویسنده",
+    "شاعر", "روزنامه‌نگار", "کارآفرین", "سرمایه‌گذار", "تحلیلگر داده", "متخصص امنیت شبکه", "مدیر شبکه", "طراح محصول",
+    "مدیر منابع انسانی", "مشاور مالی", "کارشناس بیمه", "فناوری اطلاعات", "وب‌مستر", "کپی‌رایتر", "مدیر محتوا", "متخصص سئو",
+    "مدیر بازاریابی", "معامله‌گر", "بانکدار", "حسابرس", "دامپزشک", "ارتوپد", "بینایی سنج", "شنوایی سنج",
+    "کارشناس تغذیه", "مربی ورزشی", "نیروی انتظامی", "آتش‌نشان", "کارمند بانک"
+];
 
-// Common street and alley names for address generation
 const streetNames = ["خیابان ولیعصر", "خیابان انقلاب", "خیابان آزادی", "بلوار کشاورز", "خیابان شریعتی", "خیابان جمهوری", "خیابان مطهری", "خیابان سهروردی", "میدان آزادی", "میدان انقلاب", "بلوار فردوسی", "خیابان حافظ", "خیابان سعدی", "خیابان ملاصدرا", "خیابان شهید بهشتی", "خیابان فاطمی", "خیابان گاندی", "خیابان وزرا", "بلوار میرداماد", "خیابان آفریقا", "خیابان ولیعصر شمالی", "خیابان ولیعصر جنوبی", "خیابان طالقانی", "خیابان فردوسی", "خیابان لاله زار", "خیابان جمهوری اسلامی", "خیابان کارگر شمالی", "خیابان کارگر جنوبی", "خیابان دماوند", "خیابان پیروزی", "خیابان آیت الله کاشانی", "بلوار آیت الله کاشانی", "خیابان ستارخان", "بلوار مرزداران", "خیابان گیشا", "خیابان ونک", "خیابان ملاصدرا", "خیابان شیخ بهایی", "خیابان ملاصدرا", "خیابان فرشته", "خیابان کامرانیه", "خیابان نیاوران", "خیابان پاسداران", "خیابان شریعتی شمالی", "خیابان سمیه", "خیابان استاد نجات‌اللهی", "خیابان سپهبد قرنی", "خیابان مفتح", "خیابان بهار شیراز", "خیابان بهار جنوبی", "خیابان کریمخان زند", "خیابان قائم مقام فراهانی"];
 const alleyNames = ["کوچه اول", "کوچه دوم", "کوچه لاله", "کوچه نرگس", "کوچه اقاقیا", "کوچه بن‌بست", "کوچه رز", "کوچه نسترن", "کوچه مهر", "کوچه آفتاب", "کوچه شبنم", "کوچه یاس", "کوچه ارکیده", "کوچه گلستان", "کوچه بهار", "کوچه پاییز", "کوچه زمستان", "کوچه تابستان", "کوچه دانش", "کوچه امید", "کوچه صلح", "کوچه دوستی", "کوچه آزادی", "کوچه استقلال", "کوچه آذر", "کوچه دی", "کوچه بهمن", "کوچه اسفند", "کوچه فروردین", "کوچه اردیبهشت", "کوچه خرداد", "کوچه تیر", "کوچه مرداد", "کوچه شهریور", "کوچه مهر", "کوچه آبان", "کوچه آذر", "کوچه نوبهار", "کوچه دلگشا", "کوچه پرستو", "کوچه آفتابگردان", "کوچه ستاره", "کوچه شقایق"];
 
 
-// 2. Utility Functions: Helper functions for random selections and number generation
+let lastGeneratedData = null;
+
+const PERSIAN_STRINGS = {
+    gender_male: "مرد",
+    gender_female: "زن",
+    address_plaque: "پلاک",
+    footer_text: 'لطفاً به <a href="https://github.com/aresowl/fakesaz" target="_blank" rel="noopener noreferrer">ریپازیتوری گیت‌هاب ما</a> ستاره بدهید.',
+};
+
+function displayData(data) {
+    const gender = data.isMale ? PERSIAN_STRINGS.gender_male : PERSIAN_STRINGS.gender_female;
+    const cityDisplay = `${data.selectedCity.name} (${data.selectedCity.province})`;
+
+    document.getElementById('fullName').textContent = data.fullName;
+    document.getElementById('gender').textContent = gender;
+    document.getElementById('birthCity').textContent = cityDisplay;
+    document.getElementById('nationalCode').textContent = data.nationalCode;
+    document.getElementById('phoneNumber').textContent = data.phoneNumber;
+    document.getElementById('cardNumber').textContent = data.cardNumber.replace(/(.{4})/g, '$1 ').trim();
+    document.getElementById('cvv2').textContent = data.cvv2;
+    document.getElementById('cardExpiry').textContent = data.cardExpiry;
+    document.getElementById('address').textContent = data.address;
+    document.getElementById('postalCode').textContent = data.postalCode;
+    document.getElementById('job').textContent = data.jobTitle;
+    document.getElementById('birthDate').textContent = data.birthDate;
+
+    const outputCard = document.getElementById('outputCard');
+    outputCard.style.transition = 'none';
+    outputCard.style.opacity = '0';
+    outputCard.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+        outputCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        outputCard.style.opacity = '1';
+        outputCard.style.transform = 'translateY(0)';
+    }, 50);
+}
+
 function getRandomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -76,7 +120,6 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// 3. National Code Generation (with checksum validation)
 function generateNationalCode(cityCodePrefix) {
     let nationalCodeBase = cityCodePrefix;
     for (let i = 0; i < 6; i++) {
@@ -99,7 +142,6 @@ function generateNationalCode(cityCodePrefix) {
     return nationalCodeBase + controlDigit.toString();
 }
 
-// 4. Luhn Algorithm for Card Number Generation
 function generateLuhnCardNumber() {
     let tempDigits = [];
     tempDigits.push(getRandomItem([4, 5, 6]));
@@ -127,9 +169,10 @@ function generateLuhnCardNumber() {
     return tempDigits.join('') + lastDigit.toString();
 }
 
-// 5. Persian Date Generation (simplified for random valid dates)
-function generateRandomPersianDate(startYear, endYear) {
-    const year = getRandomNumber(startYear, endYear);
+function generateRandomPersianDate(minAge) {
+    const currentPersianYear = 1404;
+    const maxBirthYear = currentPersianYear - minAge; 
+    const year = getRandomNumber(1350, maxBirthYear); 
     let month = getRandomNumber(1, 12);
     let day;
 
@@ -150,7 +193,6 @@ function generateCardExpiryDate() {
     return `${String(expiryMonth).padStart(2, '0')} / ${expiryYear}`;
 }
 
-// New function to generate a valid 10-digit postal code based on a 5-digit range
 function generatePostalCode(range) {
     const [min, max] = range;
     const basePostalCode = getRandomNumber(min, max);
@@ -161,67 +203,50 @@ function generatePostalCode(range) {
     return fullPostalCode;
 }
 
-// 6. Main Generation Function: Orchestrates all data generation and UI updates
+function formatPhoneNumber(prefix) {
+    // فرمت دهی به +98 (طبق درخواست‌های قبلی)
+    return '+98' + prefix.substring(1);
+}
+
 function generateFakeData() {
     const isMale = Math.random() < 0.5;
+
     const firstName = isMale ? getRandomItem(maleNames) : getRandomItem(femaleNames);
     const lastName = getRandomItem(lastNames);
     const fullName = `${firstName} ${lastName}`;
-    const gender = isMale ? "مرد" : "زن";
 
     const selectedCity = getRandomItem(cities);
     const nationalCodePrefix = getRandomItem(selectedCity.nationalCodePrefixes);
-    const nationalCode = generateNationalCode(nationalCodePrefix);
-
-    const mobilePrefix = getRandomItem(mobilePrefixes);
-    let phoneNumber = mobilePrefix;
-    for (let i = 0; i < 7; i++) {
-        phoneNumber += getRandomNumber(0, 9).toString();
-    }
-
-    const cardNumber = generateLuhnCardNumber();
-    const cvv2 = getRandomNumber(100, 999).toString();
-    const cardExpiry = generateCardExpiryDate();
-
-    const province = selectedCity.province;
+    
     const streetName = getRandomItem(streetNames);
     const alleyName = getRandomItem(alleyNames);
     const plaque = getRandomNumber(1, 200);
-    const address = `${province}، ${selectedCity.name}، ${streetName}، ${alleyName}، پلاک ${plaque}`;
+    const address = `${selectedCity.province}، ${selectedCity.name}، ${streetName}، ${alleyName}، ${PERSIAN_STRINGS.address_plaque} ${plaque}`;
 
-    const postalCode = generatePostalCode(selectedCity.postcodeRange);
+    const jobTitle = getRandomItem(jobTitles);
 
-    const job = getRandomItem(jobTitles);
+    const rawData = {
+        isMale,
+        fullName,
+        selectedCity,
+        nationalCode: generateNationalCode(nationalCodePrefix),
+        phoneNumber: formatPhoneNumber(getRandomItem(mobilePrefixes) + Array.from({length: 7}, () => getRandomNumber(0, 9)).join('')),
+        cardNumber: generateLuhnCardNumber(),
+        cvv2: getRandomNumber(100, 999).toString(),
+        cardExpiry: generateCardExpiryDate(),
+        jobTitle,
+        postalCode: generatePostalCode(selectedCity.postcodeRange),
+        birthDate: generateRandomPersianDate(18),
+        address
+    };
 
-    const birthDate = generateRandomPersianDate(1370, 1400);
-
-    document.getElementById('fullName').textContent = fullName;
-    document.getElementById('gender').textContent = gender;
-    document.getElementById('birthCity').textContent = `${selectedCity.name} (${selectedCity.province})`;
-    document.getElementById('nationalCode').textContent = nationalCode;
-    document.getElementById('phoneNumber').textContent = phoneNumber;
-    document.getElementById('cardNumber').textContent = cardNumber.replace(/(.{4})/g, '$1 ').trim();
-    document.getElementById('cvv2').textContent = cvv2;
-    document.getElementById('cardExpiry').textContent = cardExpiry;
-    document.getElementById('address').textContent = address;
-    document.getElementById('postalCode').textContent = postalCode;
-    document.getElementById('job').textContent = job;
-    document.getElementById('birthDate').textContent = birthDate;
-
-    const outputCard = document.getElementById('outputCard');
-    outputCard.style.transition = 'none';
-    outputCard.style.opacity = '0';
-    outputCard.style.transform = 'translateY(20px)';
-    
-    setTimeout(() => {
-        outputCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        outputCard.style.opacity = '1';
-        outputCard.style.transform = 'translateY(0)';
-    }, 50);
+    lastGeneratedData = rawData;
+    displayData(rawData);
 }
 
-// 9. Event Listener: Trigger data generation when the button is clicked and on initial load
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('generateButton').addEventListener('click', generateFakeData);
+    
+    // اجرای تولید اطلاعات برای بار اول
     generateFakeData();
 });
